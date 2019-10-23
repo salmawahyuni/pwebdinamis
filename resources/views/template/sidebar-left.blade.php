@@ -41,8 +41,20 @@
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-times-circle nav-icon"></i>
                   <p>Inactive Page</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fas fa-plus-square nav-icon"></i>
+                  <p>Add Blog</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fas fa-table nav-icon"></i>
+                  <p>Data Blog</p>
                 </a>
               </li>
             </ul>
