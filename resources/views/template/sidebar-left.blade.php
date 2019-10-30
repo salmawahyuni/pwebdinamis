@@ -15,7 +15,7 @@
           <img src="{{asset('gambar/user.PNG')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Salma Wahyuni</a>
+          <a href="#" class="d-block">Salma Tri Wahyuni</a>
         </div>
       </div>
 
@@ -46,13 +46,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('/tambah-blog')}}" class="nav-link">
                   <i class="fas fa-plus-square nav-icon"></i>
-                  <p>Add Blog</p>
+                  <p>Tambah Blog</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('/data-blog')}}" class="nav-link">
                   <i class="fas fa-table nav-icon"></i>
                   <p>Data Blog</p>
                 </a>

@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/tambah-blog', function () {
+    return view('blog.tambahblog');
+});
+
+Route::get('/data-blog', function () {
+    return view('blog.datablog');
+});

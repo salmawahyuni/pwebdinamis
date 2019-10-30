@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -6,7 +5,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-      <title>Pemrograman Web Dinamis</title>
+      <title>Data Blog</title>
       
       @include('template.head')
   </head>
@@ -31,8 +30,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              
+              <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+              <li class="breadcrumb-item active">Data Blog</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -42,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Main content -->
     <div class="content">
-      <h3>Halaman Utama</h3>
+      <h3>Halaman Data Blog</h3>
     </div>
     <!-- /.content -->
   </div>
@@ -55,4 +54,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- jQuery -->
 @include('template.script')
 </body>
+
 </html>
