@@ -41,7 +41,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Main content -->
     <div class="content">
-      <h3>Halaman Data Blog</h3>
+      <h3>Halaman Data Blog</h3>  
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Data Table</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>                  
+                    <tr>
+                      <th><center>Nama</center></th>
+                      <th colspan = "3"><center>Aksi</center></th>
+                    </tr>
+                    @foreach ($varAngka as $isinya)
+                    <tr>
+                      <td><center>{{$isinya}}</center></td>
+                      <td><center>
+                        <a href="{{$isinya}}">
+                          <i class="fas fa-glasses">Lihat</i></a>
+                      </center></td>
+                      <td><center>
+                        <a href="{{$isinya}}">
+                          <i class="fas fa-edit">Edit</i></a>
+                      </center></td>
+                      <td><center> 
+                        <a href="{{$isinya}}">
+                          <i class="fas fa-trash-alt">Hapus</i></a>
+                        </a>
+                      </center></td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            
     </div>
     <!-- /.content -->
   </div>
@@ -54,5 +91,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- jQuery -->
 @include('template.script')
 </body>
-
+ 
 </html>
