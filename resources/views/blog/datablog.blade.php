@@ -55,27 +55,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <thead>                  
                     <tr>
                       <th><center>Nama</center></th>
-                      <th colspan = "3"><center>Aksi</center></th>
+                      <th style ="width : 25%" colspan = "3"><center>Aksi</center></th>
                     </tr>
                     @foreach ($varAngka as $isinya)
                     <tr>
                       <td><center>{{$isinya}}</center></td>
                       <td><center>
                         <a href="{{$isinya}}">
-                          <i class="fas fa-glasses">Lihat</i></a>
-                      </center></td>
-                      <td><center>
+                          <i class="fas fa-glasses indigo">Lihat</i></a>
+                          |
                         <a href="{{$isinya}}">
-                          <i class="fas fa-edit">Edit</i></a>
-                      </center></td>
-                      <td><center> 
+                          <i class="fas fa-edit green">Edit</i></a>  
+                          |
                         <a href="{{$isinya}}">
-                          <i class="fas fa-trash-alt">Hapus</i></a>
+                          <i class="fas fa-trash-alt red">Hapus</i></a>
                         </a>
                       </center></td>
                     </tr>
                     @endforeach
-                  </tbody>
+                  </thead>
                 </table>
               </div>
             

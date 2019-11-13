@@ -22,8 +22,6 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -46,10 +44,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/tambah-blog')}}" class="nav-link">
+                <router-link to="tambah-data" class="nav-link">
                   <i class="fas fa-plus-square nav-icon"></i>
                   <p>Tambah Blog</p>
-                </a>
+                </router-link>
               </li>
               <li class="nav-item">
                 <a href="{{url('/data-blog')}}" class="nav-link">
