@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('/tambah-blog', 'BlogController@tambahblog');
 
 Route::get('/data-blog', 'BlogController@index');
+
+Route::get('/pengguna', 'BlogController@pengguna');
+
+Route::get('/kategori', 'BlogController@kategori');
+

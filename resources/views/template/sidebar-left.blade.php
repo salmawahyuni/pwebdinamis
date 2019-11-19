@@ -4,7 +4,7 @@
  <a href="index3.html" class="brand-link">
       <img src="{{asset('gambar/logo-umb.PNG')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">S1 Informatika</span>
     </a>
 
     <!-- Sidebar -->
@@ -50,9 +50,21 @@
                 </router-link>
               </li>
               <li class="nav-item">
-                <a href="{{url('/data-blog')}}" class="nav-link">
+                <router-link to="data-blog" class="nav-link">
                   <i class="fas fa-table nav-icon"></i>
                   <p>Data Blog</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <router-link to="pengguna" class="nav-link">
+                <i class="fas fa-users square nav-icon"></i>
+                  <p>Pengguna</p>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="kategori" class="nav-link">
+                <i class="fas fa-indent square nav-icon"></i>
+                  <p>Kategori</p>
                 </a>
               </li>
             </ul>

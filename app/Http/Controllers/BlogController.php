@@ -87,4 +87,19 @@ class BlogController extends Controller
     {
         return view('blog.tambahblog');
     }
+
+    public function datablog()
+    {
+        return view('blog.datablog');
+    }
+
+    public function pengguna()
+    {
+        return view('blog.pengguna');
+    }
+
+    public function kategori()
+    {
+        return view('blog.kategori');
+    }
 }
