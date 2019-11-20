@@ -45,25 +45,25 @@
               </li>
               <li class="nav-item">
                 <router-link to="tambah-data" class="nav-link">
-                  <i class="fas fa-plus-square nav-icon"></i>
+                  <i class="fas fa-plus-square nav-icon blue"></i>
                   <p>Tambah Blog</p>
                 </router-link>
               </li>
               <li class="nav-item">
                 <router-link to="data-blog" class="nav-link">
-                  <i class="fas fa-table nav-icon"></i>
+                  <i class="fas fa-table nav-icon green"></i>
                   <p>Data Blog</p>
                 </a>
               </li>
               <li class="nav-item">
                 <router-link to="pengguna" class="nav-link">
-                <i class="fas fa-users square nav-icon"></i>
+                <i class="fas fa-users square nav-icon orange"></i>
                   <p>Pengguna</p>
                 </router-link>
               </li>
               <li class="nav-item">
                 <router-link to="kategori" class="nav-link">
-                <i class="fas fa-indent square nav-icon"></i>
+                <i class="fas fa-indent square nav-icon indigo"></i>
                   <p>Kategori</p>
                 </a>
               </li>

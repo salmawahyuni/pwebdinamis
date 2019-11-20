@@ -8,7 +8,7 @@
                     <div class="card-body">
                     <tr>
                       <th><center>Nama</center></th>
-                      <th style ="width : 25%" colspan = "3"><center>Aksi</center></th>
+                      <th style ="width : 25%"><center>Aksi</center></th>
                     </tr><table class="table table-bordered">
                     
                     <tr>

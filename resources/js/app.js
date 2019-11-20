@@ -13,6 +13,9 @@ Vue.use(VueRouter)
 
 let routes = [
     { path: '/tambah-data', component: require('./components/blog/tambahblog.vue').default},
+    { path: '/data-blog', component: require('./components/blog/datablog.vue').default},
+    { path: '/pengguna', component: require('./components/blog/pengguna.vue').default},
+    { path: '/kategori', component: require('./components/blog/kategori.vue').default}
 ]
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
