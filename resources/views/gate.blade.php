@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-
 <head>
-  <title>Wo i</title>
-  @include('Template.head')
+      <title>Pemrograman Web Dinamis</title>
+      
+      @include('template.head')
 </head>
-
-
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" id="app">
 
   <!-- Navbar -->
-  @include('Template.navbar')
+  @include('template.navbar')
   <!-- /.navbar -->
 
-
   <!-- Main Sidebar Container -->
-  @include('Template.sidebar-left')
-
-
-  <!-- Content Wrapper. Contains page content -->
+  @include('template.sidebar-left')
+  
+     <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Blog Page</h1>
+            <h1 class="m-0 text-dark">Hello World</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-              <li class="breadcrumb-item active">Add Blog</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -41,25 +36,20 @@
     </div>
     <!-- /.content-header -->
 
-
     <!-- Main content -->
-    @include('Blog.IsiTambahBlog')
-
+    <div class="content">
+      <h3>Halaman Utama</h3>
+      <router-view></router-view>
+    </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-
   <!-- Main Footer -->
-  @include('Template.footer')
+  @include('template.footer')
 </div>
 <!-- ./wrapper -->
-
-
 <!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
-@include('Template.script')
-
+@include('template.script')
 </body>
 </html>

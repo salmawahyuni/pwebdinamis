@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-class BlogController extends Controller
+use App\kategori;
+class kategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,18 +14,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $varAngka = ["A1","B2","C3","D4"];
-        return view('blog.datablog', compact ('varAngka'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        // return "Masuk Index Kategori";
+        return kategori::all();
     }
 
     /**
@@ -50,17 +41,6 @@ class BlogController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -81,25 +61,5 @@ class BlogController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function tambahblog()
-    {
-        return view('blog.tambahblog');
-    }
-
-    public function datablog()
-    {
-        return view('blog.datablog');
-    }
-
-    public function pengguna()
-    {
-        return view('blog.pengguna');
-    }
-
-    public function kategori()
-    {
-        return view('blog.kategori');
     }
 }

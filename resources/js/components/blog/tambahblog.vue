@@ -3,29 +3,36 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Tambah Data</div>
+                    <div class="card-header"><h3>Add Blog</h3></div>
 
                     <div class="card-body">
-                    <tr>
-                      <th><center>Nama</center></th>
-                      <th style ="width : 25%"><center>Aksi</center></th>
-                    </tr>
-                    <table class="table table-bordered">
-                    <tr>
-                      <td><center>Salma</center></td>
-                      <td><center>
-                        
-                          <a href ="#"><i class="fas fa-glasses indigo">Lihat</i></a>
-                          |
-                        
-                          <a href ="#"><i class="fas fa-edit green">Edit</i></a>  
-                          |
-                        
-                          <a href="#"><i class="fas fa-trash-alt red">Hapus</i></a>
-                        
-                      </center></td>
-                    </tr>
-                    </table>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th><center>Nama</center></th>
+                                <th style="width:40%"><center>Aksi</center></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                Renjun
+                                </td>
+
+                                <td>
+                                <center>
+                                <a href="#">
+                                    <i class="fas fa-eye pink"> Read </i>
+                                </a>
+                                &nbsp;&nbsp; | &nbsp;&nbsp;
+                                <a href="#">
+                                    <i class="fas fa-edit cyan"> Edit </i>
+                                </a>
+                                &nbsp;&nbsp; | &nbsp;&nbsp;
+                                <a href="#">
+                                    <i class="fas fa-trash indigo"> Delete</i>
+                                </a>
+                                </center>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

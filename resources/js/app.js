@@ -11,18 +11,51 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+import {
+    Form,
+    HasError,
+    AlertError
+} from 'vForm';
+
+//import alert
+import Swal from 'sweetalert2'
+window.Swal = Swal;
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+window.Toast = Toast;
+
+window.Form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+
+//Progress Bar
+import VueProgressBar from 'vue-progressbar'
+Vue.use(VueProgressBar, {
+    color: 'rgb(143, 255, 199)',
+    failedColor: 'red',
+    height: '7px'
+})
+
+let Fire = new Vue();
+window.Fire = Fire;
+
 let routes = [
-    { path: '/tambah-data', component: require('./components/blog/tambahblog.vue').default},
-    { path: '/data-blog', component: require('./components/blog/datablog.vue').default},
-    { path: '/pengguna', component: require('./components/blog/pengguna.vue').default},
-    { path: '/kategori', component: require('./components/blog/kategori.vue').default}
+    {path:'/tambah-blog', component: require('./components/Blog/TambahBlog.vue').default},
+    {path:'/data-blog', component: require('./components/Blog/DataBlog.vue').default},
+    {path:'/user', component: require('./components/Blog/User.vue').default},
+    {path:'/category', component: require('./components/Blog/Category.vue').default},
+    {path:'/masuk', component: require('./components/masuk.vue').default}
 ]
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 const router = new VueRouter({
     mode: 'history',
-    routes //short for 'routes: routes'
+    routes
 })
 
 const app = new Vue({
