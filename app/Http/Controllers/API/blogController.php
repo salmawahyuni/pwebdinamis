@@ -26,7 +26,22 @@ class blogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'kategori_id' => 'required|string|max:30',
+            'user_id' => 'required|string|max:30',
+            'judul' => 'required|string|max:30',
+            'isi' => 'required|string|max:30',
+            'jumlah_baca' => 'required|string|max:30',
+        ]);
+
+        return blog::create([
+            'id' =>$request['id'],
+            'kategori_id' =>$request['kategori_id'],
+            'user_id' =>$request['user_id'],
+            'judul' =>$request['judul'],
+            'isi' =>$request['isi'],
+            'jumlah_baca' =>$request['jumlah_baca'],
+        ]);
     }
 
     /**

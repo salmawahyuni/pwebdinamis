@@ -6,7 +6,7 @@
                     <div class="card-header"><h3>Category</h3></div>
 
                     <div class="card-body">
-                        <button type="button" class="btn btn-success float-right"><i class="fas fa-credit-card"></i> &nbsp; Tambah Kategori </button>
+                        <button type="button" class="btn btn-success" @click="modalBaru"><i class="fas fa-credit-card"></i> &nbsp; Tambah Kategori</button>
                         <br>
                         <br>
                         <br>
@@ -25,7 +25,7 @@
                                 </td>
 
                                 <td>
-                                
+                        
                                 </td>
 
                                 <td>
@@ -46,6 +46,49 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+    <div
+      class="modal fade"
+      id="tambah"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="tambahLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tambahLabel" v-show="!editmode">Tambah Data Baru</h5>
+            <h5 class="modal-title" id="tambahLabel" v-show="editmode">Rubah Data Kategori</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form @submit.prevent="editmode ? updateData() : createData()">
+            <div class="modal-body">
+              <div class="form-group">
+                <input
+                  v-model="form.namakategori"
+                  type="text"
+                  name="namakategori"
+                  placeholder="Nama Kategori"
+                  class="form-control"
+                  :class="{ 'is-invalid': form.errors.has('namakategori') }"
+                />
+                <has-error :form="form" field="namakategori"></has-error>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Keluar</button>
+              <button v-show="!editmode" type="submit" class="btn btn-primary">Tambah</button>
+              <button v-show="editmode" type="submit" class="btn btn-primary">Rubah</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--/Modal-->
     </div>
 </template>
 
@@ -62,16 +105,36 @@
                 })
             };
         },
-        methods: {  //tindakan untuk data:hapus, lihat, dll
+        methods: {
+            modalBaru() {
+                this.editmode = false;
+                this.form.reset();
+                $("#tambah").modal("show");
+            },  //tindakan untuk data:hapus, lihat, dll
             loadData() {
                 axios.get("api/kategori").then(({data}) => (this.kategoris = data));
-            } 
-        },
-        created(){  //menampilkan data
-            this.loadData();
-            Fire.$on("refreshData", () => {
+            },
+            createData() {
+                this.form
+                .post("api/kategori")
+                .then(() => {
+                    this.$Progress.start();
+                    Fire.$emit("refreshData");
+                    $("#tambah").modal("hide");
+                    Toast.fire({
+                        type: "success",
+                        title: "Data Berhasi Tersimpan"
+                        });
+                        this.$Progress.finish();
+                        })
+                        .catch();
+                        } 
+                        },
+            created(){  //menampilkan data
                 this.loadData();
-            });
-        }
-    };
+                Fire.$on("refreshData", () => {
+                    this.loadData();
+                });
+            }
+        };
 </script>
