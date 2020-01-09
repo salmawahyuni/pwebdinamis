@@ -31,11 +31,11 @@
                                 <td>
                                 <center>
                                 
-                                <a href="#">
+                                <a href="#" @click="editData(items)" title="Edit Data">
                                     <i class="fas fa-edit cyan"> </i>
                                 </a>
                                 &nbsp;&nbsp; | &nbsp;&nbsp;
-                                <a href="#">
+                                <a href="#" @click="deleteData(items.id)" title="Hapus Data">
                                     <i class="fas fa-trash indigo"> </i>
                                 </a>
                                 </center>
@@ -111,6 +111,12 @@
                 this.form.reset();
                 $("#tambah").modal("show");
             },  //tindakan untuk data:hapus, lihat, dll
+            editData(items){
+              this.editmode= true;
+              this.form.reset();
+              $("#tambah").modal("show");
+              this.form.fill(items);
+            },
             loadData() {
                 axios.get("api/kategori").then(({data}) => (this.kategoris = data));
             },
@@ -128,8 +134,48 @@
                         this.$Progress.finish();
                         })
                         .catch();
-                        } 
-                        },
+                    },
+            updateData(){
+              this.form
+              .put("api/kategori/" + this.form.id)
+              .then(() =>{
+                this.$Progress.start();
+                $("#tambah").modal("hide");
+                Toast.fire({
+                  type: "success",
+                  title: "Data Berhasil Dirubah"
+                });
+                this.$Progress.finish();
+                Fire.$emit("refreshData");
+              })
+              .catch(() => {
+                this.$Progress.fail();
+              });
+            },
+            deleteData(id){
+              Swal.fire({
+                title: "Anda Yakin Ingin Menghapus Data Ini?",
+                text: "Klik Batal Untuk Membatalkan Pengghapusan",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Hapus"
+              }).then(result => {
+                if (result.value){
+                  this.form
+                  .delete("api/kategori/"+ id)
+                  .then(() => {
+                    Swal.fire("Terhapus","Data Anda Sudah Terhapus","success");
+                    Fire.$emit("refreshData");
+                  })
+                  .catch(() => {
+                    Swal.fire("Gagal","Data Gagal Terhapus","warning");
+                  });
+                }
+              });
+            }
+          },        
             created(){  //menampilkan data
                 this.loadData();
                 Fire.$on("refreshData", () => {

@@ -1970,6 +1970,12 @@ __webpack_require__.r(__webpack_exports__);
       $("#tambah").modal("show");
     },
     //tindakan untuk data:hapus, lihat, dll
+    editData: function editData(items) {
+      this.editmode = true;
+      this.form.reset();
+      $("#tambah").modal("show");
+      this.form.fill(items);
+    },
     loadData: function loadData() {
       var _this = this;
 
@@ -1993,15 +1999,56 @@ __webpack_require__.r(__webpack_exports__);
 
         _this2.$Progress.finish();
       })["catch"]();
+    },
+    updateData: function updateData() {
+      var _this3 = this;
+
+      this.form.put("api/kategori/" + this.form.id).then(function () {
+        _this3.$Progress.start();
+
+        $("#tambah").modal("hide");
+        Toast.fire({
+          type: "success",
+          title: "Data Berhasil Dirubah"
+        });
+
+        _this3.$Progress.finish();
+
+        Fire.$emit("refreshData");
+      })["catch"](function () {
+        _this3.$Progress.fail();
+      });
+    },
+    deleteData: function deleteData(id) {
+      var _this4 = this;
+
+      Swal.fire({
+        title: "Anda Yakin Ingin Menghapus Data Ini?",
+        text: "Klik Batal Untuk Membatalkan Pengghapusan",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus"
+      }).then(function (result) {
+        if (result.value) {
+          _this4.form["delete"]("api/kategori/" + id).then(function () {
+            Swal.fire("Terhapus", "Data Anda Sudah Terhapus", "success");
+            Fire.$emit("refreshData");
+          })["catch"](function () {
+            Swal.fire("Gagal", "Data Gagal Terhapus", "warning");
+          });
+        }
+      });
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
 
     //menampilkan data
     this.loadData();
     Fire.$on("refreshData", function () {
-      _this3.loadData();
+      _this5.loadData();
     });
   }
 });
@@ -2197,6 +2244,12 @@ __webpack_require__.r(__webpack_exports__);
       $("#tambah").modal("show");
     },
     //tindakan untuk data:hapus, lihat, dll
+    editData: function editData(items) {
+      this.editmode = true;
+      this.form.reset();
+      $("#tambah").modal("show");
+      this.form.fill(items);
+    },
     loadData: function loadData() {
       var _this = this;
 
@@ -2220,15 +2273,56 @@ __webpack_require__.r(__webpack_exports__);
 
         _this2.$Progress.finish();
       })["catch"]();
+    },
+    updateData: function updateData() {
+      var _this3 = this;
+
+      this.form.put("api/blog/" + this.form.id).then(function () {
+        _this3.$Progress.start();
+
+        $("#tambah").modal("hide");
+        Toast.fire({
+          type: "success",
+          title: "Data Berhasil Dirubah"
+        });
+
+        _this3.$Progress.finish();
+
+        Fire.$emit("refreshData");
+      })["catch"](function () {
+        _this3.$Progress.fail();
+      });
+    },
+    deleteData: function deleteData(id) {
+      var _this4 = this;
+
+      Swal.fire({
+        title: "Anda Yakin Ingin Menghapus Data Ini?",
+        text: "Klik Batal Untuk Membatalkan Pengghapusan",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus"
+      }).then(function (result) {
+        if (result.value) {
+          _this4.form["delete"]("api/blog/" + id).then(function () {
+            Swal.fire("Terhapus", "Data Anda Sudah Terhapus", "success");
+            Fire.$emit("refreshData");
+          })["catch"](function () {
+            Swal.fire("Gagal", "Data Gagal Terhapus", "warning");
+          });
+        }
+      });
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
 
     //menampilkan data
     this.loadData();
     Fire.$on("refreshData", function () {
-      _this3.loadData();
+      _this5.loadData();
     });
   }
 });
@@ -2441,6 +2535,12 @@ __webpack_require__.r(__webpack_exports__);
       $("#tambah").modal("show");
     },
     //tindakan untuk data:hapus, lihat, dll
+    editData: function editData(items) {
+      this.editmode = true;
+      this.form.reset();
+      $("#tambah").modal("show");
+      this.form.fill(items);
+    },
     loadData: function loadData() {
       var _this = this;
 
@@ -2464,15 +2564,56 @@ __webpack_require__.r(__webpack_exports__);
 
         _this2.$Progress.finish();
       })["catch"]();
+    },
+    updateData: function updateData() {
+      var _this3 = this;
+
+      this.form.put("api/user/" + this.form.id).then(function () {
+        _this3.$Progress.start();
+
+        $("#tambah").modal("hide");
+        Toast.fire({
+          type: "success",
+          title: "Data Berhasil Dirubah"
+        });
+
+        _this3.$Progress.finish();
+
+        Fire.$emit("refreshData");
+      })["catch"](function () {
+        _this3.$Progress.fail();
+      });
+    },
+    deleteData: function deleteData(id) {
+      var _this4 = this;
+
+      Swal.fire({
+        title: "Anda Yakin Ingin Menghapus Data Ini?",
+        text: "Klik Batal Untuk Membatalkan Pengghapusan",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus"
+      }).then(function (result) {
+        if (result.value) {
+          _this4.form["delete"]("api/user/" + id).then(function () {
+            Swal.fire("Terhapus", "Data Anda Sudah Terhapus", "success");
+            Fire.$emit("refreshData");
+          })["catch"](function () {
+            Swal.fire("Gagal", "Data Gagal Terhapus", "warning");
+          });
+        }
+      });
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
 
     //menampilkan data
     this.loadData();
     Fire.$on("refreshData", function () {
-      _this3.loadData();
+      _this5.loadData();
     });
   }
 });
@@ -41910,15 +42051,33 @@ var render = function() {
                       "td",
                       [
                         _c("center", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fas fa-edit cyan" })
-                          ]),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", title: "Edit Data" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.editData(items)
+                                }
+                              }
+                            },
+                            [_c("i", { staticClass: "fas fa-edit cyan" })]
+                          ),
                           _vm._v(
                             "\n                               |   \n                            "
                           ),
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fas fa-trash indigo" })
-                          ])
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", title: "Hapus Data" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteData(items.id)
+                                }
+                              }
+                            },
+                            [_c("i", { staticClass: "fas fa-trash indigo" })]
+                          )
                         ])
                       ],
                       1
@@ -42259,19 +42418,41 @@ var render = function() {
                           _vm._v(
                             "\n                               |   \n                            "
                           ),
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fas fa-edit cyan" }, [
-                              _vm._v(" Edit ")
-                            ])
-                          ]),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", title: "Edit Data" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.editData(items)
+                                }
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "fas fa-edit cyan" }, [
+                                _vm._v(" Edit ")
+                              ])
+                            ]
+                          ),
                           _vm._v(
                             "\n                               |   \n                            "
                           ),
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fas fa-trash indigo" }, [
-                              _vm._v(" Delete")
-                            ])
-                          ])
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", title: "Hapus Data" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteData(items.id)
+                                }
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "fas fa-trash indigo" }, [
+                                _vm._v(" Delete")
+                              ])
+                            ]
+                          )
                         ])
                       ],
                       1
@@ -42817,15 +42998,33 @@ var render = function() {
                       "td",
                       [
                         _c("center", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fas fa-edit cyan" })
-                          ]),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", title: "Edit Data" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.editData(items)
+                                }
+                              }
+                            },
+                            [_c("i", { staticClass: "fas fa-edit cyan" })]
+                          ),
                           _vm._v(
                             "\n                               |   \n                            "
                           ),
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fas fa-trash indigo" })
-                          ])
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", title: "Hapus Data" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteData(items.id)
+                                }
+                              }
+                            },
+                            [_c("i", { staticClass: "fas fa-trash indigo" })]
+                          )
                         ])
                       ],
                       1
